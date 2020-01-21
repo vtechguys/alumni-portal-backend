@@ -4,9 +4,7 @@
   "description": "Social network for developers",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
-    "start": "node index.js",
-    "build": "babel src --out-dir dist"
+    "start": "node index.js"
   },
   "author": "vtechguys",
   "license": "MIT",
