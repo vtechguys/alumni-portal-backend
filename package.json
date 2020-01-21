@@ -1,0 +1,50 @@
+{
+  "name": "dev2devconnector",
+  "version": "1.0.0",
+  "description": "Social network for developers",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node index.js",
+    "build": "babel src --out-dir dist"
+  },
+  "author": "vtechguys",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.486.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "busboy": "^0.3.1",
+    "cloudinary": "^1.17.0",
+    "cloudinary-core": "^2.8.0",
+    "concurrently": "^3.5.1",
+    "datauri": "^2.0.0",
+    "excel-parser": "^0.2.2",
+    "express": "^4.16.3",
+    "gravatar": "^1.6.0",
+    "jsonwebtoken": "^8.2.0",
+    "mongoose": "^5.0.12",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.3.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "randomstring": "^1.1.5",
+    "request": "^2.88.0",
+    "validator": "^9.4.1",
+    "xlsx": "^0.15.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "nodemon": "^1.18.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtechguys/dev2devconnecter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vtechguys/dev2devconnecter/issues"
+  },
+  "homepage": "https://github.com/vtechguys/dev2devconnecter#readme"
+}
