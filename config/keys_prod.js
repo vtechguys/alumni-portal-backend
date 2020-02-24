@@ -17,7 +17,7 @@ const config = {
   SMTP_AUTH_MAIL : process.env.SMTP_AUTH_MAIL,
   SMTP_AUTH_PASS : process.env.SMTP_AUTH_PASS,
   BASE_URL : 'https://calm-retreat-93373.herokuapp.com',
-  REQUEST_FRONTNEND_BASE_URL: 'https://alumni-portal-bpit.herokuapp.com/'
+  REQUEST_FRONTNEND_BASE_URL: 'https://alumni-portal-bpit.herokuapp.com'
 
 };
 
