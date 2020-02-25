@@ -320,8 +320,9 @@ function saveUser(user, callback) {
         console.log("saved", userSaved._id);
 
         var subject = 'Welcome to BPIT Connect. '
-        var body = `Hi ${userObject.name}, You have succefully registered. Please complete your Profile for verification.\nFollowing is your Login Credentials. \n\nVerify your email by clicking on link below \n ${keys.REQUEST_FRONTNEND_BASE_URL}/verify-account/${userObject.email}/${userObject.emailToken}\n\n
+        var body = `Hi ${userObject.name}, \nYou have succefully registered.  \nVerify your email by clicking on link below \n\n ${keys.REQUEST_FRONTNEND_BASE_URL}/verify-account/${userObject.email}/${userObject.emailToken}\n\n
                     
+                    Please complete your Profile using your Login Credentials.\n\n
                     --------------------------\n
                     ${keys.REQUEST_FRONTNEND_BASE_URL}/login\n
                     Email : ${userObject.email}\n
