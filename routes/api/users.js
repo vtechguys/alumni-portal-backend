@@ -520,6 +520,9 @@ router.post('/forgot-password',(request, response)=>{
     if(err){
       response.status(400)
     }
+    if(!user){
+      return response.status(404).json({success: false, message: 'User not found'});
+    }
       const passwordToken = randomStringGen(10)
       user.passwordToken = passwordToken
       user.passwordTimeStamp = new Date()
@@ -545,7 +548,7 @@ router.post('/reset-password/:email/:hash', (request, response)=>{
   const password = request.body.password
   User.findOne({email},(err, user)=>{
     if(err){
-      response.status(404).json({err : 'User not found'})
+      return response.status(404).json({err : 'User not found'})
     }
 
     if(user.passwordTimeStamp && user.passwordToken){
