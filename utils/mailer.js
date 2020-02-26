@@ -17,7 +17,7 @@ const mailer = {
             from : SMTP_AUTH_MAIL,
             subject : subject,
             text : body,
-            bcc : to
+            to : to
         }
 
         console.log(SMTP_SERVICE, SMTP_AUTH_MAIL, SMTP_AUTH_PASS)
