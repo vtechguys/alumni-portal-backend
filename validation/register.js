@@ -10,38 +10,44 @@ module.exports = function validateRegisterInput(data) {
   data.password2 = !isEmpty(data.password2) ? data.password2 : '';
   data.enrollmentNumber = !isEmpty(data.enrollmentNumber) ? data.enrollmentNumber : '';
 
-  if(Validator.isEmpty(data.enrollmentNumber)){
+  
+  if(Validator.default.isEmpty(data.enrollmentNumber)){
     errors.enrollmentNumber = 'Enrollment Number is required.'
   }
-  if(data.enrollmentNumber && !Validator.isLength(data.enrollmentNumber, { min: 10, max: 11 })){
+
+  if(data.enrollmentNumber && data.enrollmentNumber.length === 11){
     errors.enrollmentNumber = 'Enrollment Number must be of 11 charaters';
   }
 
-  if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
+  if(isNaN(data.enrollmentNumber)){
+    errors.enrollmentNumber = 'Invalid. Only digits required.'
+  }
+
+  if (!Validator.default.isLength(data.name, { min: 2, max: 30 })) {
     errors.name = 'Name must be between 2 and 30 characters';
   }
 
-  if (Validator.isEmpty(data.name)) {
+  if (Validator.default.isEmpty(data.name)) {
     errors.name = 'Name field is required';
   }
 
-  if (Validator.isEmpty(data.email)) {
+  if (Validator.default.isEmpty(data.email)) {
     errors.email = 'Email field is required';
   }
 
-  if (!Validator.isEmail(data.email)) {
+  if (!Validator.default.isEmail(data.email)) {
     errors.email = 'Email is invalid';
   }
 
-  if (Validator.isEmpty(data.password)) {
+  if (Validator.default.isEmpty(data.password)) {
     errors.password = 'Password field is required';
   }
 
-  if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
+  if (!Validator.default.isLength(data.password, { min: 6, max: 30 })) {
     errors.password = 'Password must be at least 6 characters';
   }
 
-  if (Validator.isEmpty(data.password2)) {
+  if (Validator.default.isEmpty(data.password2)) {
     errors.password2 = 'Confirm Password field is required';
   }
 
