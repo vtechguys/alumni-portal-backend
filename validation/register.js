@@ -15,8 +15,8 @@ module.exports = function validateRegisterInput(data) {
     errors.enrollmentNumber = 'Enrollment Number is required.'
   }
 
-  if(data.enrollmentNumber && data.enrollmentNumber.length === 11){
-    errors.enrollmentNumber = 'Enrollment Number must be of 11 charaters';
+  if(data.enrollmentNumber && !Validator.isLength(data.enrollmentNumber, { min: 11, max: 11 })){
+    errors.enrollmentNumber = 'Enrollment Number must have 11 digits';
   }
 
   if(isNaN(data.enrollmentNumber)){
