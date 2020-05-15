@@ -11,7 +11,7 @@ module.exports = function validateRegisterInput(data) {
   data.enrollmentNumber = !isEmpty(data.enrollmentNumber) ? data.enrollmentNumber : '';
 
   
-  if(Validator.default.isEmpty(data.enrollmentNumber)){
+  if(Validator.isEmpty(data.enrollmentNumber)){
     errors.enrollmentNumber = 'Enrollment Number is required.'
   }
 
@@ -23,31 +23,31 @@ module.exports = function validateRegisterInput(data) {
     errors.enrollmentNumber = 'Invalid. Only digits required.'
   }
 
-  if (!Validator.default.isLength(data.name, { min: 2, max: 30 })) {
+  if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
     errors.name = 'Name must be between 2 and 30 characters';
   }
 
-  if (Validator.default.isEmpty(data.name)) {
+  if (Validator.isEmpty(data.name)) {
     errors.name = 'Name field is required';
   }
 
-  if (Validator.default.isEmpty(data.email)) {
+  if (Validator.isEmpty(data.email)) {
     errors.email = 'Email field is required';
   }
 
-  if (!Validator.default.isEmail(data.email)) {
+  if (!Validator.isEmail(data.email)) {
     errors.email = 'Email is invalid';
   }
 
-  if (Validator.default.isEmpty(data.password)) {
+  if (Validator.isEmpty(data.password)) {
     errors.password = 'Password field is required';
   }
 
-  if (!Validator.default.isLength(data.password, { min: 6, max: 30 })) {
+  if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
     errors.password = 'Password must be at least 6 characters';
   }
 
-  if (Validator.default.isEmpty(data.password2)) {
+  if (Validator.isEmpty(data.password2)) {
     errors.password2 = 'Confirm Password field is required';
   }
 
